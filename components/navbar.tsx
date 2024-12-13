@@ -38,10 +38,8 @@ export function Navbar() {
                 className="relative text-sm font-medium text-white hover:text-white/80 h-16 flex items-center justify-center"
                 href={href}
               >
-                {window &&
-                  `/${window.location.href.split("/").pop()}`.includes(
-                    href
-                  ) && (
+                {typeof window !== 'undefined' &&
+                  `/${window.location.href.split("/").pop()}`.includes(href) && (
                     <div className="absolute inset-x-0 h-px w-3/4 mx-auto -bottom-px shadow-2xl bg-gradient-to-r from-transparent via-red-500 to-transparent" />
                   )}
                 <span className="relative z-20">{label}</span>
